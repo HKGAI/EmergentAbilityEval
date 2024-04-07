@@ -67,6 +67,23 @@ python run.py eval_llama_7b_test.py -p slurm_conifg.py
 #脚本方式
 ./eval_llama.sh
 ```
+🏁提高GPU内存使用：设置max-workers-per-gpu（可以在hf_llama_7b.py中设置，也可以在命令行中直接传）
+```Bash
+nohup python run.py eval_llama_7b_test.py --max-workers-per-gpu 6 > xxx_log 2>&1
+```
+前后效果对比：
+<div align="center">
+    <img width="800" alt="image" src="https://github.com/HKGAI/EmergentAbilityEval/assets/114467558/3db98a13-ef41-4374-9f91-d7ba6206e141">
+    <br />
+默认max-workers-per-gpu=1
+</div>
+
+<div align="center">
+    <img width="800" alt="image" src="https://github.com/HKGAI/EmergentAbilityEval/assets/114467558/57d9a5b1-3a31-4a6b-85ea-ebae98bc3212">
+    <br />
+max-workers-per-gpu=6
+</div>
+
 
 ## 📖 结果
 
@@ -91,3 +108,4 @@ outputs/default/
 <div align="center">
   <img width="612" alt="截屏2023-11-15 16 07 24" src="https://github.com/HKGAI/opencompass/assets/114467558/4c601d41-ac3b-479c-8b9b-8563082c2b7c">
   <br />
+</div>
