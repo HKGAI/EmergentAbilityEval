@@ -39,6 +39,6 @@ with read_base():
 
 datasets = sum((v for k, v in locals().items() if k.endswith('_datasets')), [])
 
-models = [models]
+models = models
 
 summarizer = dict(dataset_abbrs=dataset_abbrs, summary_groups=summary_groups, )
